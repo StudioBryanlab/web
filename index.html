@@ -36,106 +36,72 @@
   <section id="proyectos" class="projects">
     <h2>Mis <span>Proyectos</span></h2>
     
-    <div class="projects-scroll-container">
-      <div class="projects-horizontal">
-        <!-- Proyecto 1: TaskMaster PRO -->
-        <div class="project-card compact">
-          <div class="project-preview">
-            <iframe 
-              src="http://127.0.0.1:5501/index.html" 
-              title="TaskMaster PRO"
-              loading="lazy"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-rocket"></i> TaskMaster PRO</h3>
-            <div class="project-tech">
-              <span><i class="fab fa-js"></i> JavaScript</span>
-              <span><i class="fas fa-robot"></i> IA</span>
-              <span><i class="fab fa-node-js"></i> Node.js</span>
-            </div>
-            <button class="view-details" data-project="taskmaster">Ver detalles</button>
+    <div class="projects-grid">
+      <!-- Proyecto 1: TaskMaster PRO -->
+      <div class="project-card expanded">
+        <div class="project-header">
+          <h3><i class="fas fa-rocket"></i> TaskMaster PRO</h3>
+          <div class="project-tech">
+            <span><i class="fab fa-js"></i> JavaScript</span>
+            <span><i class="fas fa-robot"></i> IA</span>
+            <span><i class="fab fa-node-js"></i> Node.js</span>
           </div>
         </div>
-        
-        <!-- Proyecto 2 -->
-        <div class="project-card compact">
-          <div class="project-preview">
-            <img src="assets/images/proyecto-ia.webp" alt="Proyecto IA">
+        <div class="project-content">
+          <div class="project-image-container">
+            <img src="TaskMaster Pro.jpg" alt="TaskMaster PRO" class="project-main-image">
           </div>
-          <div class="project-info">
-            <h3><i class="fas fa-brain"></i> Sistema de IA</h3>
-            <div class="project-tech">
-              <span><i class="fab fa-python"></i> Python</span>
-              <span><i class="fas fa-robot"></i> IA</span>
-              <span><i class="fab fa-js"></i> API</span>
-            </div>
-            <button class="view-details" data-project="ia-system">Ver detalles</button>
+          <div class="project-description">
+            <p>Gestor de tareas inteligente con sugerencias de IA para mejorar la productividad.</p>
+            <button class="view-details-btn" data-project="taskmaster">
+              <i class="fas fa-search-plus"></i> Ver detalles completos
+            </button>
           </div>
         </div>
-        
-        <!-- Proyecto 3 -->
-        <div class="project-card compact">
-          <div class="project-preview">
-            <img src="assets/images/web-futurista.webp" alt="Web Futurista">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-globe"></i> Web Futurista</h3>
-            <div class="project-tech">
-              <span><i class="fab fa-html5"></i> HTML5</span>
-              <span><i class="fab fa-css3-alt"></i> CSS3</span>
-              <span><i class="fab fa-js"></i> Three.js</span>
-            </div>
-            <button class="view-details" data-project="web-futurista">Ver detalles</button>
+      </div>
+      
+      <!-- Proyecto 2: Sistema de IA -->
+      <div class="project-card expanded">
+        <div class="project-header">
+          <h3><i class="fas fa-brain"></i> Sistema de IA Avanzado</h3>
+          <div class="project-tech">
+            <span><i class="fas fa-network-wired"></i> TensorFlow</span>
+            <span><i class="fab fa-react"></i> Transformers</span>
+            <span><i class="fas fa-server"></i> FastAPI</span>
           </div>
         </div>
-        
-        <!-- Proyecto 4 -->
-        <div class="project-card compact">
-          <div class="project-preview">
-            <img src="assets/images/app-movil.webp" alt="App Móvil">
+        <div class="project-content">
+          <div class="project-image-container">
+            <img src="Sistemas de IA Avanzada.jpg" alt="Sistema de IA Avanzado" class="project-main-image">
           </div>
-          <div class="project-info">
-            <h3><i class="fas fa-mobile-alt"></i> App Móvil</h3>
-            <div class="project-tech">
-              <span><i class="fab fa-react"></i> React Native</span>
-              <span><i class="fas fa-fire"></i> Firebase</span>
-              <span><i class="fab fa-node-js"></i> Node.js</span>
-            </div>
-            <button class="view-details" data-project="app-movil">Ver detalles</button>
+          <div class="project-description">
+            <p>Plataforma de NLP y aprendizaje automático con modelos transformer personalizados.</p>
+            <button class="view-details-btn" data-project="ia-system">
+              <i class="fas fa-search-plus"></i> Ver detalles completos
+            </button>
           </div>
         </div>
-        
-        <!-- Proyecto 5 -->
-        <div class="project-card compact">
-          <div class="project-preview">
-            <img src="assets/images/ecommerce.webp" alt="E-commerce">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-shopping-cart"></i> Tienda Online</h3>
-            <div class="project-tech">
-              <span><i class="fab fa-react"></i> React</span>
-              <span><i class="fab fa-node-js"></i> Express</span>
-              <span><i class="fas fa-database"></i> MongoDB</span>
-            </div>
-            <button class="view-details" data-project="ecommerce">Ver detalles</button>
+      </div>
+      
+      <!-- Proyecto 3: Web Futurista -->
+      <div class="project-card expanded">
+        <div class="project-header">
+          <h3><i class="fas fa-globe"></i> Web Futurista</h3>
+          <div class="project-tech">
+            <span><i class="fab fa-html5"></i> HTML5</span>
+            <span><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span><i class="fab fa-js"></i> Three.js</span>
           </div>
         </div>
-        
-        <!-- Proyecto 6 -->
-        <div class="project-card compact">
-          <div class="project-preview">
-            <img src="assets/images/dashboard.webp" alt="Dashboard">
+        <div class="project-content">
+          <div class="project-image-container">
+            <img src="assets/images/web-futurista.webp" alt="Web Futurista" class="project-main-image">
           </div>
-          <div class="project-info">
-            <h3><i class="fas fa-chart-line"></i> Dashboard</h3>
-            <div class="project-tech">
-              <span><i class="fab fa-vuejs"></i> Vue.js</span>
-              <span><i class="fab fa-node-js"></i> Node.js</span>
-              <span><i class="fas fa-database"></i> SQL</span>
-            </div>
-            <button class="view-details" data-project="dashboard">Ver detalles</button>
+          <div class="project-description">
+            <p>Landing page con efectos 3D interactivos creados con Three.js.</p>
+            <button class="view-details-btn" data-project="web-futurista">
+              <i class="fas fa-search-plus"></i> Ver detalles completos
+            </button>
           </div>
         </div>
       </div>
@@ -176,7 +142,7 @@
     <h2>Contacto</h2>
     <form class="contact-form" action="https://formsubmit.co/bcamposa02@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://tu-portafolio.netlify.app/gracias.html">
+      <input type="hidden" name="_next" value="gracias.html">
       <input type="text" name="nombre" placeholder="Nombre" required>
       <input type="email" name="email" placeholder="Correo" required>
       <textarea name="mensaje" placeholder="Mensaje" required></textarea>
@@ -195,194 +161,6 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-  <script>
-    // ===== DATOS DE PROYECTOS =====
-    const PROJECTS = [
-      {
-        id: "taskmaster",
-        title: "TaskMaster PRO",
-        description: "Gestor de tareas inteligente con sugerencias de IA para mejorar la productividad.",
-        technologies: ["HTML5", "CSS3", "JavaScript", "Node.js", "DeepSeek API"],
-        features: [
-          "Gestión de tareas con categorías",
-          "Sugerencias de productividad por IA",
-          "Diseño con efecto 'glassmorphism'",
-          "Funcionalidad offline",
-          "Persistencia local con localStorage",
-          "Animaciones y feedback visual"
-        ],
-        image: "assets/images/proyecto-ia.webp",
-        link: "#",
-        featured: true
-      },
-      {
-        id: "ia-system",
-        title: "Sistema de IA",
-        description: "Sistema de recomendación creado con DeepSeek Chat.",
-        technologies: ["Python", "IA", "API"],
-        features: [
-          "Procesamiento de lenguaje natural",
-          "Recomendaciones personalizadas",
-          "Integración con múltiples plataformas"
-        ],
-        image: "assets/images/proyecto-ia.webp",
-        link: "#"
-      },
-      {
-        id: "web-futurista",
-        title: "Web Futurista",
-        description: "Landing page con efectos 3D usando Three.js.",
-        technologies: ["HTML5", "CSS3", "Three.js"],
-        features: [
-          "Efectos 3D interactivos",
-          "Diseño responsive",
-          "Animaciones fluidas"
-        ],
-        image: "assets/images/web-futurista.webp",
-        link: "#"
-      },
-      {
-        id: "app-movil",
-        title: "App Móvil",
-        description: "Aplicación móvil para gestión de proyectos.",
-        technologies: ["React Native", "Firebase", "Node.js"],
-        features: [
-          "Multiplataforma (iOS/Android)",
-          "Sincronización en tiempo real",
-          "Autenticación segura"
-        ],
-        image: "assets/images/app-movil.webp",
-        link: "#"
-      },
-      {
-        id: "ecommerce",
-        title: "Tienda Online",
-        description: "Plataforma de e-commerce completa.",
-        technologies: ["React", "Express", "MongoDB"],
-        features: [
-          "Carrito de compras",
-          "Pasarela de pagos",
-          "Panel de administración"
-        ],
-        image: "assets/images/ecommerce.webp",
-        link: "#"
-      },
-      {
-        id: "dashboard",
-        title: "Dashboard Analítico",
-        description: "Panel de control para visualización de datos.",
-        technologies: ["Vue.js", "Node.js", "SQL"],
-        features: [
-          "Gráficos interactivos",
-          "Exportación de reportes",
-          "Actualización en tiempo real"
-        ],
-        image: "assets/images/dashboard.webp",
-        link: "#"
-      }
-    ];
-
-    // ===== INICIALIZACIÓN =====
-    document.addEventListener('DOMContentLoaded', function() {
-      // Configurar año actual
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // Configurar efecto de escritura
-      if (typeof Typed !== 'undefined') {
-        new Typed('#typed-name', {
-          strings: ['Bryan Campos'],
-          typeSpeed: 100,
-          showCursor: false
-        });
-        new Typed('#typed-text', {
-          strings: ['Desarrollador FullStack', 'Especialista en IA'],
-          typeSpeed: 60,
-          backSpeed: 30,
-          loop: true
-        });
-      }
-      
-      // Configurar modal de proyectos
-      const modal = document.getElementById('project-modal');
-      const modalContent = document.getElementById('modal-content');
-      
-      document.querySelectorAll('.view-details').forEach(button => {
-        button.addEventListener('click', function() {
-          const projectId = this.getAttribute('data-project');
-          const project = PROJECTS.find(p => p.id === projectId);
-          
-          if (project) {
-            modalContent.innerHTML = `
-              <div class="${projectId}-details">
-                <div class="project-description">
-                  <h3><i class="fas fa-${projectId === 'taskmaster' ? 'rocket' : 
-                    projectId === 'ia-system' ? 'brain' : 
-                    projectId === 'web-futurista' ? 'globe' : 
-                    projectId === 'app-movil' ? 'mobile-alt' : 
-                    projectId === 'ecommerce' ? 'shopping-cart' : 'chart-line'}"></i> ${project.title}</h3>
-                  <p>${project.description}</p>
-                </div>
-                
-                <div class="tech-stack">
-                  <h4>Tecnologías utilizadas:</h4>
-                  <ul>
-                    ${project.technologies.map(tech => `
-                      <li><i class="fab fa-${tech.toLowerCase().includes('html') ? 'html5' : 
-                         tech.toLowerCase().includes('css') ? 'css3-alt' : 
-                         tech.toLowerCase().includes('javascript') ? 'js' : 
-                         tech.toLowerCase().includes('node') ? 'node-js' : 
-                         tech.toLowerCase().includes('python') ? 'python' : 
-                         tech.toLowerCase().includes('firebase') ? 'fire' : 
-                         tech.toLowerCase().includes('react') ? 'react' : 
-                         tech.toLowerCase().includes('vue') ? 'vuejs' : 
-                         tech.toLowerCase().includes('mongodb') ? 'database' : 
-                         tech.toLowerCase().includes('sql') ? 'database' : 
-                         tech.toLowerCase().includes('api') ? 'server' : 'code'}"></i> ${tech}</li>
-                    `).join('')}
-                  </ul>
-                </div>
-                
-                <div class="project-features">
-                  <h4>Características principales:</h4>
-                  <ul>
-                    ${project.features.map(feat => `<li>${feat}</li>`).join('')}
-                  </ul>
-                </div>
-                
-                ${project.link ? `<a href="${project.link}" class="project-link" target="_blank">Ver proyecto</a>` : ''}
-              </div>
-            `;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-          }
-        });
-      });
-      
-      // Cerrar modal
-      document.querySelector('.close-modal').addEventListener('click', function() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      });
-      
-      window.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      });
-      
-      // Botón "Ver Proyectos"
-      document.getElementById('show-projects-btn').addEventListener('click', function() {
-        const projectsSection = document.getElementById('proyectos');
-        const headerHeight = 90;
-        const targetPosition = projectsSection.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
