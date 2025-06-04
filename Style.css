@@ -304,23 +304,6 @@ section h2 span {
   box-shadow: 0 0 15px var(--accent-color);
 }
 
-.demo-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: var(--transition);
-}
-
-.demo-btn:hover {
-  background: var(--secondary-color);
-  box-shadow: 0 0 15px var(--secondary-color);
-}
-
 .scroll-controls {
   display: flex;
   justify-content: center;
@@ -473,23 +456,6 @@ section h2 span {
   position: absolute;
   left: 0;
   color: var(--accent-color);
-}
-
-.project-demo-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--accent-color);
-  color: var(--bg-dark);
-  padding: 0.8rem 1.8rem;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: var(--transition);
-}
-
-.project-demo-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
 }
 
 /* === SOBRE MÍ === */
