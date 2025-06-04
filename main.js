@@ -103,9 +103,6 @@ function renderProjects() {
             <button class="view-details-btn" data-project="${project.id}">
               <i class="fas fa-search-plus"></i> Detalles
             </button>
-            <a href="${project.link}" class="demo-btn" target="_blank">
-              <i class="fas fa-external-link-alt"></i> Demo
-            </a>
           </div>
         </div>
       </div>
@@ -151,10 +148,6 @@ function showProjectDetails(projectId) {
                 <li>${feat}</li>
               `).join('')}
             </ul>
-            
-            <a href="${project.link}" class="project-demo-btn" target="_blank">
-              <i class="fas fa-external-link-alt"></i> Ver Demo
-            </a>
           </div>
         </div>
       </div>
