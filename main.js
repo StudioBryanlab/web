@@ -36,21 +36,36 @@ const PROJECTS = [
     icon: "fa-brain"
   },
   {
-    id: "web-futurista",
-    title: "Web Futurista",
-    description: "Landing page con efectos 3D interactivos creados con Three.js. Diseño optimizado para rendimiento y experiencia de usuario inmersiva.",
-    technologies: ["HTML5", "CSS3", "Three.js", "WebGL"],
+    id: "nexusai",
+    title: "NexusAI",
+    description: "Plataforma de IA para pequeñas empresas que automatiza tareas, analiza datos y genera contenido. Solución todo-en-uno para emprendedores con tecnología de vanguardia.",
+    technologies: ["Inteligencia Artificial", "JavaScript", "CSS", "HTML"],
     features: [
-      "Efectos 3D interactivos con física realista",
-      "Animaciones fluidas con GSAP",
-      "Diseño responsive adaptativo",
-      "Optimización para móviles",
-      "Carga progresiva de assets"
+      "Generación automática de contenido optimizado",
+      "Chatbots inteligentes con NLP personalizado",
+      "Dashboards analíticos predictivos",
+      "Interfaz intuitiva con diseño futurista",
+      "Integración con APIs populares"
     ],
-    // Reemplaza con tu imagen real en assets/images/
-    image: "assets/images/web-futurista.webp",
+    image: "assets/images/nexusai.jpg",
     link: "#",
-    icon: "fa-globe"
+    featured: true,
+    icon: "fa-robot"
+  },
+  {
+    id: "ecommerce-ai",
+    title: "E-Commerce AI",
+    description: "Solución de comercio electrónico potenciada por IA con recomendaciones personalizadas y gestión inteligente de inventario.",
+    technologies: ["React", "Node.js", "TensorFlow"],
+    features: [
+      "Recomendaciones en tiempo real",
+      "Chatbot de atención al cliente",
+      "Predicción de tendencias",
+      "Optimización de precios"
+    ],
+    image: "assets/images/ecommerce-ai.jpg",
+    link: "#",
+    icon: "fa-shopping-cart"
   }
 ];
 
