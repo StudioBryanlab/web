@@ -47,7 +47,7 @@ const PROJECTS = [
       "Interfaz intuitiva con diseño futurista",
       "Integración con APIs populares"
     ],
-    image: "assets/images/nexusai.jpg",
+    image: "assets/images/NexusAI.jpg",
     link: "#",
     featured: true,
     icon: "fa-robot"
