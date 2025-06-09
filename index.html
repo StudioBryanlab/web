@@ -85,13 +85,24 @@
   <!-- CONTACTO -->
   <section id="contacto" class="contact">
     <h2>Contacto</h2>
-    <form class="contact-form" action="https://formsubmit.co/bcamposa02@gmail.com" method="POST">
+    <form id="contactForm" class="contact-form" action="https://formsubmit.co/bcamposa02@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="gracias.html">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="email" name="email" placeholder="Correo" required>
-      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-      <button type="submit" class="theme-button"><i class="fas fa-paper-plane"></i> Enviar</button>
+      <input type="hidden" name="_next" value="https://studiobryanlab.github.io/web/gracias.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde portafolio">
+      
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Nombre" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Correo" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Mensaje" required></textarea>
+      </div>
+      <button type="submit" class="theme-button">
+        <i class="fas fa-paper-plane"></i> Enviar
+      </button>
     </form>
     <div class="social-links">
       <a href="https://github.com/StudioBryanlab?tab=projects" target="_blank"><i class="fab fa-github"></i></a>
