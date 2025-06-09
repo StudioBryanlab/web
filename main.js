@@ -12,7 +12,6 @@ const PROJECTS = [
       "Funcionalidad offline completa",
       "Sincronización entre dispositivos"
     ],
-    // Reemplaza con tu imagen real en assets/images/
     image: "assets/images/taskmaster.jpg",
     link: "#",
     featured: true,
@@ -30,7 +29,6 @@ const PROJECTS = [
       "Dashboard de monitoreo en tiempo real",
       "Despliegue con Docker y Kubernetes"
     ],
-    // Reemplaza con tu imagen real en assets/images/
     image: "assets/images/sistema-ia.jpg", 
     link: "#",
     icon: "fa-brain"
@@ -53,25 +51,26 @@ const PROJECTS = [
     icon: "fa-robot"
   },
   {
-    id: "ecommerce-ai",
-    title: "E-Commerce AI",
-    description: "Solución de comercio electrónico potenciada por IA con recomendaciones personalizadas y gestión inteligente de inventario.",
-    technologies: ["React", "Node.js", "TensorFlow"],
+    id: "de-compras-con-ali",
+    title: "DE COMPRAS CON ALI",
+    description: "Servicio personalizado de compras en EE.UU. que te ahorra tiempo y dinero. Encuentro los mejores descuentos en tus marcas favoritas y te las llevo hasta tu puerta.",
+    technologies: ["E-commerce", "Logística", "Servicio Personalizado"],
     features: [
-      "Recomendaciones en tiempo real",
-      "Chatbot de atención al cliente",
-      "Predicción de tendencias",
-      "Optimización de precios"
+      "Compra en tus marcas favoritas sin moverte de casa",
+      "Ahorro garantizado encontrando los mejores descuentos",
+      "Servicio personalizado según tus preferencias",
+      "Entrega segura y confiable",
+      "Tiendas asociadas: ROSS, Marcos y otras marcas de lujo"
     ],
-    image: "assets/images/ecommerce-ai.jpg",
+    image: "assets/images/landing-page-de-compras-con-ali.jpg",
     link: "#",
-    icon: "fa-shopping-cart"
+    featured: true,
+    icon: "fa-shopping-bag"
   }
 ];
 
 // ===== 2. FUNCIONES AUXILIARES ===== //
 
-// Cargar imagen con manejo de errores
 function loadImageWithFallback(imgElement, imageUrl) {
   const fallbackImage = "https://via.placeholder.com/600x400/0e0e1c/00f7ff?text=Imagen+no+disponible";
   
@@ -91,7 +90,6 @@ function loadImageWithFallback(imgElement, imageUrl) {
 
 // ===== 3. FUNCIONES PRINCIPALES ===== //
 
-// Renderizar proyectos con manejo seguro de imágenes
 function renderProjects() {
   const projectsContainer = document.querySelector('.projects-horizontal-scroll');
   
@@ -123,14 +121,12 @@ function renderProjects() {
       </div>
     `).join('');
 
-    // Cargar imágenes con manejo de errores
     document.querySelectorAll('.project-main-image').forEach(img => {
       loadImageWithFallback(img, img.dataset.src);
     });
   }
 }
 
-// Mostrar detalles del proyecto en modal
 function showProjectDetails(projectId) {
   const project = PROJECTS.find(p => p.id === projectId);
   const modal = document.getElementById('project-modal');
@@ -168,7 +164,6 @@ function showProjectDetails(projectId) {
       </div>
     `;
 
-    // Cargar imagen del modal con manejo de errores
     const modalImg = document.querySelector('.modal-project-image img');
     loadImageWithFallback(modalImg, project.image);
     
@@ -177,13 +172,11 @@ function showProjectDetails(projectId) {
   }
 }
 
-// Cerrar modal
 function closeModal() {
   document.getElementById('project-modal').style.display = 'none';
   document.body.style.overflow = 'auto';
 }
 
-// Configurar efecto de escritura
 function initTypingEffect() {
   if (typeof Typed !== 'undefined') {
     new Typed('#typed-name', {
@@ -202,7 +195,6 @@ function initTypingEffect() {
   }
 }
 
-// Configurar scroll suave
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -213,7 +205,6 @@ function initSmoothScroll() {
   });
 }
 
-// Configurar botón "Ver Proyectos"
 function setupProjectsButton() {
   const showProjectsBtn = document.getElementById('show-projects-btn');
   if (showProjectsBtn) {
@@ -224,7 +215,6 @@ function setupProjectsButton() {
   }
 }
 
-// Configurar desplazamiento horizontal con flechas
 function setupHorizontalScroll() {
   const scrollContainer = document.querySelector('.projects-horizontal-scroll');
   const leftArrow = document.querySelector('.left-arrow');
@@ -241,9 +231,7 @@ function setupHorizontalScroll() {
   }
 }
 
-// Configurar interacciones de proyectos
 function setupProjectInteractions() {
-  // Botones de ver detalles
   document.addEventListener('click', function(e) {
     if (e.target.closest('.view-details-btn')) {
       const projectId = e.target.closest('.view-details-btn').getAttribute('data-project');
@@ -251,7 +239,6 @@ function setupProjectInteractions() {
     }
   });
 
-  // Cerrar modal
   document.querySelector('.close-modal')?.addEventListener('click', closeModal);
   window.addEventListener('click', function(e) {
     if (e.target === document.getElementById('project-modal')) {
@@ -260,7 +247,6 @@ function setupProjectInteractions() {
   });
 }
 
-// Configurar año actual en footer
 function setupCurrentYear() {
   const yearElement = document.getElementById('year');
   if (yearElement) {
@@ -268,30 +254,56 @@ function setupCurrentYear() {
   }
 }
 
+function setupFormSubmission() {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitButton.innerHTML;
+      
+      // Mostrar estado de carga
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      submitButton.disabled = true;
+      
+      // Enviar formulario
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = contactForm.querySelector('[name="_next"]').value;
+        } else {
+          throw new Error('Error en el envío');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar el mensaje. Por favor inténtalo de nuevo.');
+      })
+      .finally(() => {
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      });
+    });
+  }
+}
+
 // ===== 4. INICIALIZACIÓN ===== //
 document.addEventListener('DOMContentLoaded', () => {
-  // Configurar año actual
   setupCurrentYear();
-
-  // Renderizar proyectos dinámicamente
   renderProjects();
-
-  // Configurar efectos de escritura
   initTypingEffect();
-  
-  // Configurar scroll suave
   initSmoothScroll();
-  
-  // Configurar interacciones de proyectos
   setupProjectInteractions();
-
-  // Configurar botón "Ver Proyectos"
   setupProjectsButton();
-
-  // Configurar desplazamiento horizontal
   setupHorizontalScroll();
+  setupFormSubmission();
 
-  // Carga diferida de Typed.js si no está disponible
   if (typeof Typed === 'undefined') {
     const typedScript = document.createElement('script');
     typedScript.src = 'https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js';
