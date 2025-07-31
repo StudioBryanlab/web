@@ -155,7 +155,7 @@ section h2 span {
   box-shadow: 0 10px 30px rgba(0, 247, 255, 0.1);
 }
 
-/* === PROYECTOS - NUEVO DISEÑO HORIZONTAL === */
+/* === PROYECTOS === */
 .projects-scroll-container {
   position: relative;
   max-width: 1400px;
@@ -171,11 +171,11 @@ section h2 span {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Para Firefox */
+  scrollbar-width: none;
 }
 
 .projects-horizontal-scroll::-webkit-scrollbar {
-  display: none; /* Para Chrome/Safari */
+  display: none;
 }
 
 .project-card-horizontal {
@@ -482,42 +482,80 @@ section h2 span {
 }
 
 /* === CONTACTO === */
-.contact-form {
+.hire-me-container {
+  text-align: center;
+  margin: 2rem auto;
   max-width: 500px;
-  margin: 0 auto;
 }
-.contact-form input, 
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
+
+.pulse-button {
+  position: relative;
+  width: 280px;
+  height: 80px;
   border: none;
-  border-radius: 10px;
-  background: #1a1a2e;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #00f7ff, #ff00c8);
   color: white;
-  font-family: var(--font-primary);
-}
-.contact-form textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-.theme-button {
-  padding: 0.75rem 1.5rem;
-  background: var(--accent-color);
-  border: none;
-  border-radius: 10px;
-  color: black;
+  font-size: 1.5rem;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   cursor: pointer;
-  transition: var(--transition);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 0 auto;
+  justify-content: center;
 }
-.theme-button:hover {
-  background: var(--secondary-color);
-  color: white;
+
+.pulse-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 30px rgba(0, 247, 255, 0.8), 
+              0 5px 30px rgba(255, 0, 200, 0.6);
+}
+
+.pulse-button:active {
+  transform: translateY(0);
+}
+
+.pulse-button__text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pulse-button__text i {
+  font-size: 1.4rem;
+}
+
+.pulse-button__rings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #00f7ff;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+  opacity: 0;
+}
+
+.pulse-button__rings:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.pulse-button__rings:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.hire-me-subtext {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-top: 1rem;
 }
 
 .social-links {
@@ -555,6 +593,17 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   .hero-content h1 {
@@ -586,6 +635,12 @@ footer {
 
   .modal-project-content {
     grid-template-columns: 1fr;
+  }
+
+  .pulse-button {
+    width: 250px;
+    height: 70px;
+    font-size: 1.3rem;
   }
 }
 
@@ -619,6 +674,12 @@ footer {
 
   .project-actions {
     flex-direction: column;
+  }
+
+  .pulse-button {
+    width: 220px;
+    height: 65px;
+    font-size: 1.2rem;
   }
 }
 
