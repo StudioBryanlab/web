@@ -70,7 +70,6 @@ const PROJECTS = [
 ];
 
 // ===== 2. FUNCIONES AUXILIARES ===== //
-
 function loadImageWithFallback(imgElement, imageUrl) {
   const fallbackImage = "https://via.placeholder.com/600x400/0e0e1c/00f7ff?text=Imagen+no+disponible";
   
@@ -89,7 +88,6 @@ function loadImageWithFallback(imgElement, imageUrl) {
 }
 
 // ===== 3. FUNCIONES PRINCIPALES ===== //
-
 function renderProjects() {
   const projectsContainer = document.querySelector('.projects-horizontal-scroll');
   
@@ -254,41 +252,14 @@ function setupCurrentYear() {
   }
 }
 
-function setupFormSubmission() {
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitButton.innerHTML;
-      
-      // Mostrar estado de carga
-      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-      submitButton.disabled = true;
-      
-      // Enviar formulario
-      fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          window.location.href = contactForm.querySelector('[name="_next"]').value;
-        } else {
-          throw new Error('Error en el envío');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('Hubo un error al enviar el mensaje. Por favor inténtalo de nuevo.');
-      })
-      .finally(() => {
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-      });
+function setupHireMeButton() {
+  const hireMeBtn = document.getElementById('hire-me-btn');
+  if (hireMeBtn) {
+    hireMeBtn.addEventListener('click', () => {
+      const phoneNumber = "+50670105989"; // Tu número con código de país
+      const message = "Hola Bryan, estoy interesado en trabajar contigo. ¿Podemos hablar?";
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
     });
   }
 }
@@ -302,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupProjectInteractions();
   setupProjectsButton();
   setupHorizontalScroll();
-  setupFormSubmission();
+  setupHireMeButton();
 
   if (typeof Typed === 'undefined') {
     const typedScript = document.createElement('script');
